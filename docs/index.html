@@ -4,33 +4,65 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0">
   <title>Find My BLE Device</title>
-  <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Roboto:400,400,700,100" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/standardize.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="body page-index clearfix">
   <div class="main clearfix">
+    <div id="settingsContainer" class="settings-container clearfix">
+      <div class="settings-header clearfix">
+        <a href="javascript:toggleSettings();" class="button">&lt;<br></a>
+        <h1 class="_text">Settings</h1>
+      </div>
+      <button class="ble-button _button">About the project</button>
+      <button class="ble-button _button _button-2">FAQ</button>
+      <button class="ble-button _button _button-3">Recommend</button>
+      <button class="ble-button _button _button-4">Impressum</button>
+      <button class="ble-button _button _button-5">Data protection policy</button>
+    </div>
     <div class="nav-header clearfix">
       <h1 class="_text">Find My BLE Device</h1>
-      <a class="button button-1" href="#">?<br></a>
-      <a class="button button-2" href="#">⚙️<br></a>
+      <a href="javascript:toggleHelp();" class="button button-2">?<br></a>
+      <a href="javascript:toggleSettings();" class="button button-3">⚙<br></a>
     </div>
-    <div class="full-width default-padding main-container main-container-1 clearfix">
+    <a href="#" class="full-width default-padding main-container main-container-1 clearfix">
       <img class="image" src="images/Logo Pin 4 without-background.png">
       <p class="text _text">Find via GPS</p>
-    </div>
+    </a>
     <div class="full-width default-padding main-container main-container-2 clearfix">
       <div class="divider divider-1"></div>
       <div class="divider divider-2"></div>
     </div>
-    <div class="full-width default-padding main-container main-container-3 clearfix">
+    <a href="#" class="full-width default-padding main-container main-container-3 clearfix">
       <img class="image" src="images/Logo Pin without-background.png">
       <p class="text _text text-2">Find via Bluetooth</p>
+    </a>
+    <div onClick="window.location='javascript:toggleHelp();';" id="helpContainer" class="help-container">
+      <div class="help-dialog clearfix">
+        <p class="text _text text-3">Info</p>
+        <p class="text _text text-4">This is a very informative and rivoting description, but sadly about something completely unrelated...</p>
+        <a href="#" class="button">Thanks for nothing</a>
+      </div>
     </div>
-    <div class="container clearfix">
-      <p class="text _text text-3">⏶</p>
-      <p class="text _text text-4">Hearing Aid 1</p>
+    <div id="overlayContainer" class="overlay-container clearfix">
+      <a href="javascript:toggleOverlay();" id="overlayButton" class="shadow overlay-button clearfix">
+        <div class="container"></div>
+        <p id="overlayArrow" class="arrow">⏶</p>
+        <p class="text _text">Hearing Aid 1</p>
+      </a>
+      <div id="overlayList" class="shadow overlay-list clearfix">
+        <h3 class="_text">Known devices</h3>
+        <button class="full-width default-padding ble-button _button _button-6">Hearing Aid 1</button>
+        <button class="full-width default-padding ble-button _button _button-7">Hearing Aid 2</button>
+        <button class="full-width default-padding ble-button _button _button-8">Bluetooth Headphones</button>
+        <h3 class="_text _text-9">Available devices</h3>
+        <p class="status">Searching vicinity...</p>
+      </div>
     </div>
   </div>
+
+  <script src="js/jquery-min.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
